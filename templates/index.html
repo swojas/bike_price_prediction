@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <!--<link rel="icon" href="/favicon.ico" type="image/ico">-->
+    
+    
+    
+    <title>Bike Price Prediction</title>
+  </head>
+  <body>
+    
+
+   </div>
+  <div class="container col-5 mt-lg-4">
+  	<br>
+    <h1 class="fw-bold">Bike Price Prediction</h1>
+    <br>
+    <form action="{{url_for('prediction')}}" method="POST">
+
+      <div class="d-grid gap-4 ">
+
+<div data-toggle="tooltip" data-placement="top" title="How many previous owners did the bike/scooter have">
+<strong>Previous Owners | </strong>
+<select name="owner" id="owner">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+</div>
+
+
+<div data-toggle="tooltip" data-placement="top" title="How many kilometers driven">
+
+  <label for="kmph"><strong>Kilometers | </strong></label>
+  <input type="number" id="kmph" name="kmph" placeholder="eg. 30000" required="required">
+
+</div>
+
+
+<div data-toggle="tooltip" data-placement="top" title="Ex showroom price when you bought the bike/scooter">
+
+  <label for="exprice"><strong>Ex showroom price | </strong></label>
+  <input type="number" id="exprice" name="exprice" placeholder="eg. 2,00,000 in lacs" required="required">
+
+</div>
+
+
+<div data-toggle="tooltip" data-placement="top" title="How old is your bike/scooter">
+
+  <label for="age"><strong>Age </strong></label>
+  <input type="number" id="age" step="0.01" name="age" placeholder="eg. 5" required="required">
+
+</div>
+
+
+<div data-toggle="tooltip" data-placement="top" title="Who is selling your bike">
+<strong>Seller Type | </strong>
+<select name="type" id="type">
+        <option value="1">Individual</option>
+        <option value="0">Dealer</option>
+    </select>
+</div>
+
+
+
+
+  <button type="submit" class="btn btn-outline-primary">Submit</button>
+  <br>
+</div>
+       
+      {{prediction_text}}
+    </form>
+  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+  </body>
+</html>
