@@ -20,8 +20,10 @@ y = dataset.iloc[:, 0].values
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-from sklearn.linear_model import LinearRegression
-regressor = LinearRegression()
+from sklearn.svm import SVR
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+regressor = make_pipeline(StandardScaler(), SVR(C=1.0, epsilon=0.2))
 regressor.fit(X_train, y_train)
 
 pickle.dump(regressor, open('model.pkl', 'wb'))
